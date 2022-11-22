@@ -1,1 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
 
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# HTML Reports
+*.html
+*.xml
+*.png
