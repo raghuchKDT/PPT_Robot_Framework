@@ -1,38 +1,15 @@
 *** Settings ***
-Library  SeleniumLibrary
+Resource    ../Resource_setupnteardown.robot
+Resource    ../Resource/Resource_Module.robot
+Test Setup       Open Browser And Maximize
+Test Teardown    Close Browser Window
 
-*** Variables ***
-${browser}  chrome
-${url}  http://localhost:5003/
-${timer}    4 seconds
-${signinbutton_Xpath}   xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button
-${ProjectMenu_Xpath}    xpath://*[@id="three"]
-${ModulePage_Xpath}  xpath://*[@id="pills-device-tab"]
-${ProjectModuleHeader_Xpath}  xpath://*[@id="selespanProj"]
-${NewModuleBtn_Xpath}   xpath://*[@id="deChk2"]/div[2]/div/button[1]
-${ModuleSaveBtn_Xpath}  xpath://*[@id="btn-add-module"]
-${SelectModule_Xpath}   xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[3]/div/div/div[1]/span[1]/div/ul/li/a/h6
-${EditModuleBtn_Xpath}  xpath://*[@id="deChk2"]/div[2]/div/button[2]
-${EditedModuleSaveBtn_Xpath}  xpath:/html/body/div[1]/div[2]/main/div[10]/div/div/div[2]/div/button[2]
-${CopyModuleBtn_Xpath}  xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[3]/div/div/div[1]/div[2]/div/button[3]
-${CpyModuleSaveasBtn_Xpath}  xpath://*[@id="btn-copy-module"]
-${ModuleDeleteBtn_Xpath}    xpath://*[@id="btn-DeleteModule"]
-${ModuleConfirmDeleteBtn_Xpath}  xpath://*[@id="btn-delete-module"]
+
 
 *** Keywords ***
 
 # This is a keyword define to navigate to Module Page
 ModulePage
-
-    open browser    ${url}  ${browser}
-    maximize browser window
-    set selenium implicit wait  ${timer}
-
-    input text  id:UserName  OCUA4
-    input text  id:Password  1234
-
-    click element   ${signinbutton_Xpath}
-
     click element   ${ProjectMenu_Xpath}
 
     click element   ${ModulePage_Xpath}
@@ -49,7 +26,7 @@ ProjectModulePath
     FOR  ${item}  IN  @{get_text}
       Log To Console  ${item.text}
     END
-    close browser
+
 
 # this is a testcase to create New Module
 CreateNewModule
@@ -70,7 +47,6 @@ CreateNewModule
     click element   ${ModuleSaveBtn_Xpath}
 
     page should contain  Module Added successfully.
-    close browser
 
 # this is a testcase to Edit the Module
 EditModule
@@ -93,7 +69,7 @@ EditModule
     click element   ${EditedModuleSaveBtn_Xpath}
 
     page should contain  Module Updated successfully.
-    close browser
+
 
 # this is a testcase to create duplicate of the Module
 CopyModule
@@ -111,7 +87,7 @@ CopyModule
     click element   ${CpyModuleSaveasBtn_Xpath}
 
     page should contain  Module Added successfully.
-    close browser
+
 
 # This is a testcase to delete selected module
 ModuleDelete
@@ -126,4 +102,3 @@ ModuleDelete
     click element   ${ModuleConfirmDeleteBtn_Xpath}
 
     page should contain  Module deleted successfully
-    close browser
