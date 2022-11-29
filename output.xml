@@ -1,543 +1,708 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221129 12:23:04.162" rpa="false" schemaversion="3">
-<suite id="s1" name="test18 LabelPage" source="C:\Users\KnoDTec\PycharmProjects\PPT_Robot_Framework\PPT_Testcases\test18_LabelPage.robot">
-<test id="s1-t1" name="ProjectLabelPath" line="20">
-<kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221129 12:23:04.601" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:06.144"/>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221129 16:32:57.224" rpa="false" schemaversion="3">
+<suite id="s1" name="Fetchdata" source="C:\Users\KnoDTec\PycharmProjects\PPT_Robot_Framework\GET_RequestsAPI\fetchdata.robot">
+<test id="s1-t1" name="fetchdata" line="10">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.341" level="INFO">Creating Session using : alias=myssion, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.341" endtime="20221129 16:32:57.341"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221129 12:23:06.144" endtime="20221129 12:23:06.308"/>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>ProjectAPI/GetProjects</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.359" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetProjects 
+ path_url=/api/ProjectAPI/GetProjects 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.359" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetProjects 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"projectId":156,"projectName":"OCUA","description":"Project: OCUA","createdDate":"11/18/2022 5:59 PM","modifiedDate":"11/18/2022 5:59 PM","userId":1,"username":"OCUA4","systemGroupId":57,"systemGrpName":"System Group-1","unfreezePasscode":"null","facilityName":"null","popupTimer":4}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.359" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.341" endtime="20221129 16:32:57.359"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:UserName</arg>
-<arg>OCUA4</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:06.313" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221129 12:23:06.309" endtime="20221129 12:23:06.504"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.359" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.359"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:06.505" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221129 12:23:06.504" endtime="20221129 12:23:06.660"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${signinbutton_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:06.660" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221129 12:23:06.660" endtime="20221129 12:23:06.970"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221129 12:23:08.971" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221129 12:23:06.970" endtime="20221129 12:23:08.971"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:08.971"/>
-</kw>
-<kw name="LabelPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ProjectMenu_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:08.971" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:08.971" endtime="20221129 12:23:09.445"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LabelTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:09.447" level="INFO">Clicking element 'xpath://*[@id="pills-label-tab"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:09.446" endtime="20221129 12:23:09.763"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:08.971" endtime="20221129 12:23:09.763"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>${timer}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221129 12:23:09.763" endtime="20221129 12:23:09.767"/>
-</kw>
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${get_text}</var>
-<arg>${ProjectLabelPathHeader_Xpath}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20221129 12:23:09.834" level="INFO">${get_text} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e6571314-758d-4eca-9820-6f7d03f161eb")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20221129 12:23:09.768" endtime="20221129 12:23:09.834"/>
-</kw>
-<for flavor="IN">
-<var>${item}</var>
-<value>@{get_text}</value>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e6571314-758d-4eca-9820-6f7d03f161eb")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.840" endtime="20221129 12:23:09.872"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.834" endtime="20221129 12:23:09.872"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="fa49c302-9ee4-4c4e-a0ac-76f140d91dbf")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.872" endtime="20221129 12:23:09.899"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.872" endtime="20221129 12:23:09.899"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="76e5c303-6ede-445f-9de9-bbc6ff804b52")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.899" endtime="20221129 12:23:09.947"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.899" endtime="20221129 12:23:09.947"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="001f0d73-0a9e-4ab9-9efc-1b296a8622f3")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.947" endtime="20221129 12:23:09.963"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.947" endtime="20221129 12:23:09.963"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="abc4a5f9-af02-4e51-b390-9ee50d3c51c8")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.963" endtime="20221129 12:23:09.984"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.963" endtime="20221129 12:23:09.984"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e77feb53-2946-4576-ba6d-eee56ba4d984")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.984" endtime="20221129 12:23:09.994"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.984" endtime="20221129 12:23:09.994"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="9dbc39cc-a2c5-4550-a3b2-a65f0b48830d")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:09.994" endtime="20221129 12:23:10.010"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:09.994" endtime="20221129 12:23:10.010"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="078fb86e-70d2-4651-880a-4680d677634b")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:10.010" endtime="20221129 12:23:10.018"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:10.010" endtime="20221129 12:23:10.018"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="13baa0f1-c091-40c2-8b0f-99ea4592e4cf")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:10.018" endtime="20221129 12:23:10.034"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:10.018" endtime="20221129 12:23:10.034"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="083cb0c4-1a5f-41be-a670-a2adf961b9ff")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:10.034" endtime="20221129 12:23:10.042"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:10.034" endtime="20221129 12:23:10.042"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="73c757da-6800-464d-8080-b8064804b3f6")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:10.042" endtime="20221129 12:23:10.058"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:10.042" endtime="20221129 12:23:10.058"/>
-</iter>
-<iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="f68a61b0-56bb-4941-b4c6-209fa042c185")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${item.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:10.058" endtime="20221129 12:23:10.066"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:10.058" endtime="20221129 12:23:10.066"/>
-</iter>
-<status status="PASS" starttime="20221129 12:23:09.834" endtime="20221129 12:23:10.066"/>
-</for>
-<kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221129 12:23:10.074" endtime="20221129 12:23:12.255"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.359"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Test Completed</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:12.255" endtime="20221129 12:23:12.257"/>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.359"/>
 </kw>
-<status status="PASS" starttime="20221129 12:23:10.066" endtime="20221129 12:23:12.257"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:12.257"/>
+<status status="PASS" starttime="20221129 16:32:57.341" endtime="20221129 16:32:57.359"/>
 </test>
-<test id="s1-t2" name="CreateNewLabel" line="34">
-<kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221129 12:23:12.257" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:13.761"/>
+<test id="s1-t2" name="fetchdata1" line="20">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.359" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.359"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221129 12:23:13.761" endtime="20221129 12:23:13.890"/>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetVariants</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.368" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetVariants 
+ path_url=/api/ProjectAPI/GetVariants 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.368" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetVariants 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.368" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.368"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:UserName</arg>
-<arg>OCUA4</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:13.890" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221129 12:23:13.890" endtime="20221129 12:23:13.995"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.368" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.368"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:13.995" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221129 12:23:13.995" endtime="20221129 12:23:14.095"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${signinbutton_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:14.095" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221129 12:23:14.095" endtime="20221129 12:23:14.425"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221129 12:23:16.427" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221129 12:23:14.426" endtime="20221129 12:23:16.427"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:16.427"/>
-</kw>
-<kw name="LabelPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ProjectMenu_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:16.428" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:16.428" endtime="20221129 12:23:17.039"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LabelTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:17.039" level="INFO">Clicking element 'xpath://*[@id="pills-label-tab"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:17.039" endtime="20221129 12:23:17.123"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:16.427" endtime="20221129 12:23:17.123"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>${timer}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221129 12:23:17.124" endtime="20221129 12:23:17.125"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${NewLabel_Btn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:17.125" level="INFO">Clicking element 'xpath://*[@id="bntGoToCreateLabel"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:17.125" endtime="20221129 12:23:17.625"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:labelName</arg>
-<arg>TestLabel1</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:17.631" level="INFO">Typing text 'TestLabel1' into text field 'id:labelName'.</msg>
-<status status="PASS" starttime="20221129 12:23:17.630" endtime="20221129 12:23:17.768"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:reportDescription</arg>
-<arg>This is a label under test</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:17.769" level="INFO">Typing text 'This is a label under test' into text field 'id:reportDescription'.</msg>
-<status status="PASS" starttime="20221129 12:23:17.769" endtime="20221129 12:23:17.895"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${NewLabelSaveBtn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:17.898" level="INFO">Clicking element 'xpath://*[@id="btn-labelSave"]'.</msg>
-<status status="PASS" starttime="20221129 12:23:17.895" endtime="20221129 12:23:17.997"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Updated Successfully.</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20221129 12:23:17.997" endtime="20221129 12:23:18.326"/>
-</kw>
-<kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221129 12:23:18.326" endtime="20221129 12:23:20.627"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.368"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Test Completed</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:20.627"/>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.368"/>
 </kw>
-<status status="PASS" starttime="20221129 12:23:18.326" endtime="20221129 12:23:20.627"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:20.627"/>
+<status status="PASS" starttime="20221129 16:32:57.359" endtime="20221129 16:32:57.368"/>
 </test>
-<test id="s1-t3" name="EditLabel" line="50">
-<kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221129 12:23:20.627" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:21.976"/>
+<test id="s1-t3" name="fetchdata2" line="29">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.368" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.368"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221129 12:23:21.976" endtime="20221129 12:23:22.092"/>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetWorkflows</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.385" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetWorkflows 
+ path_url=/api/ProjectAPI/GetWorkflows 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.385" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetWorkflows 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.385" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.385"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:UserName</arg>
-<arg>OCUA4</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:22.092" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221129 12:23:22.092" endtime="20221129 12:23:22.242"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.385" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.385"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:22.242" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221129 12:23:22.242" endtime="20221129 12:23:22.351"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${signinbutton_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:22.351" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221129 12:23:22.351" endtime="20221129 12:23:22.679"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221129 12:23:24.680" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221129 12:23:22.679" endtime="20221129 12:23:24.680"/>
-</kw>
-<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:24.680"/>
-</kw>
-<kw name="LabelPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ProjectMenu_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221129 12:23:24.680" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<msg timestamp="20221129 12:23:24.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=107.0.5304.121)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00D9ACD3+2075859]
-	Ordinal0 [0x00D2EE61+1633889]
-	Ordinal0 [0x00C2B7BD+571325]
-	Ordinal0 [0x00C12E1A+470554]
-	Ordinal0 [0x00C7AA0B+895499]
-	Ordinal0 [0x00C8AC96+961686]
-	Ordinal0 [0x00C77136+880950]
-	Ordinal0 [0x00C4FEFD+720637]
-	Ordinal0 [0x00C50F3F+724799]
-	GetHandleVerifier [0x0104EED2+2769538]
-	GetHandleVerifier [0x01040D95+2711877]
-	GetHandleVerifier [0x00E2A03A+521194]
-	GetHandleVerifier [0x00E28DA0+516432]
-	Ordinal0 [0x00D3682C+1665068]
-	Ordinal0 [0x00D3B128+1683752]
-	Ordinal0 [0x00D3B215+1683989]
-	Ordinal0 [0x00D46484+1729668]
-	BaseThreadInitThunk [0x76686939+25]
-	RtlGetFullPathName_UEx [0x773B8FD2+1218]
-	RtlGetFullPathName_UEx [0x773B8F9D+1165]
-</msg>
-<msg timestamp="20221129 12:23:24.680" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=107.0.5304.121)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00D9ACD3+2075859]
-	Ordinal0 [0x00D2EE61+1633889]
-	Ordinal0 [0x00C2B7BD+571325]
-	Ordinal0 [0x00C12E1A+470554]
-	Ordinal0 [0x00C7AA0B+895499]
-	Ordinal0 [0x00C8AC96+961686]
-	Ordinal0 [0x00C77136+880950]
-	Ordinal0 [0x00C4FEFD+720637]
-	Ordinal0 [0x00C50F3F+724799]
-	GetHandleVerifier [0x0104EED2+2769538]
-	GetHandleVerifier [0x01040D95+2711877]
-	GetHandleVerifier [0x00E2A03A+521194]
-	GetHandleVerifier [0x00E28DA0+516432]
-	Ordinal0 [0x00D3682C+1665068]
-	Ordinal0 [0x00D3B128+1683752]
-	Ordinal0 [0x00D3B215+1683989]
-	Ordinal0 [0x00D46484+1729668]
-	BaseThreadInitThunk [0x76686939+25]
-	RtlGetFullPathName_UEx [0x773B8FD2+1218]
-	RtlGetFullPathName_UEx [0x773B8F9D+1165]
-</msg>
-<status status="FAIL" starttime="20221129 12:23:24.680" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LabelTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<status status="FAIL" starttime="20221129 12:23:24.680" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>${timer}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SelectLabelcheckbox_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LabelEdit_Btn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:labelName</arg>
-<arg>Label1</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:reportDescription</arg>
-<arg>This is edited label under test</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LabelEdit_SaveBtn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Updated Successfully.</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
-</kw>
-<kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<msg timestamp="20221129 12:23:26.767" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
-<msg timestamp="20221129 12:23:26.767" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="FAIL" starttime="20221129 12:23:24.708" endtime="20221129 12:23:26.767"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.385"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Test Completed</arg>
+<arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20221129 12:23:26.767" endtime="20221129 12:23:26.767"/>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.385"/>
 </kw>
-<status status="FAIL" starttime="20221129 12:23:24.708" endtime="20221129 12:23:26.767">Execution terminated by signal</status>
+<status status="PASS" starttime="20221129 16:32:57.368" endtime="20221129 16:32:57.385"/>
+</test>
+<test id="s1-t4" name="fetchdata3" line="40">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.385" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.385"/>
 </kw>
-<status status="FAIL" starttime="20221129 12:23:20.627" endtime="20221129 12:23:26.767">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=107.0.5304.121)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00D9ACD3+2075859]
-	Ordinal0 [0x00D2EE61+1633889]
-	Ordinal0 [0x00C2B7BD+571325]
-	Ordinal0 [0x00C12E1A+470554]
-	Ordinal0 [0x00C7AA0B+895499]
-	Ordinal0 [0x00C8AC96+961686]
-	Ordinal0 [0x00C77136+880950]
-	Ordinal0 [0x00C4FEFD+720637]
-	Ordinal0 [0x00C50F3F+724799]
-	GetHandleVerifier [0x0104EED2+2769538]
-	GetHandleVerifier [0x01040D95+2711877]
-	GetHandleVerifier [0x00E2A03A+521194]
-	GetHandleVerifier [0x00E28DA0+516432]
-	Ordinal0 [0x00D3682C+1665068]
-	Ordinal0 [0x00D3B128+1683752]
-	Ordinal0 [0x00D3B215+1683989]
-	Ordinal0 [0x00D46484+1729668]
-	BaseThreadInitThunk [0x76686939+25]
-	RtlGetFullPathName_UEx [0x773B8FD2+1218]
-	RtlGetFullPathName_UEx [0x773B8F9D+1165]
-
-
-Also teardown failed:
-Execution terminated by signal</status>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetGlobalVariables</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.400" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetGlobalVariables 
+ path_url=/api/ProjectAPI/GetGlobalVariables 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.400" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetGlobalVariables 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"varGlobalId":1,"varGlobalName":"count_pass","varVariableType":"var","varProtocol":"@countpass@","varFormat":"2","defaultContent":null},{"varGlobalId":2,"varGlobalName":"count_fail","varVariableType":"var","varProtocol":"@countfail@","varFormat":"2","defaultContent":null},{"varGlobalId":3,"varGlobalName":"lot_size","varVariableType":"var","varProtocol":"@lotsize@","varFormat":"2","defaultContent":null},{"varGlobalId":4,"varGlobalName":"lot_counter","varVariableType":"var","varProtocol":"@lotcounter@","varFormat":"1","defaultContent":null},{"varGlobalId":5,"varGlobalName":"text1","varVariableType":"var","varProtocol":"@text1@","varFormat":"TESTING1","defaultContent":null},{"varGlobalId":6,"varGlobalName":"text2","varVariableType":"var","varProtocol":"@text2@","varFormat":"TESTING2","defaultContent":null},{"varGlobalId":7,"varGlobalName":"text3","varVariableType":"var","varProtocol":"@text3@","varFormat":"TESTING3","defaultContent":null},{"varGlobalId":8,"varGlobalName":"text4","varVariableType":"var","varProtocol":"@text4@","varFormat":"TESTING4","defaultContent":null},{"varGlobalId":9,"varGlobalName":"text5","varVariableType":"var","varProtocol":"@text5@","varFormat":"TESTING5","defaultContent":null},{"varGlobalId":10,"varGlobalName":"barcode1","varVariableType":"var","varProtocol":"@barcode1@","varFormat":"@date@+@time@+@text1@","defaultContent":null},{"varGlobalId":11,"varGlobalName":"barcode2","varVariableType":"var","varProtocol":"@barcode2@","varFormat":null,"defaultContent":null},{"varGlobalId":12,"varGlobalName":"barcode3","varVariableType":"var","varProtocol":"@barcode3@","varFormat":"@date@","defaultContent":null},{"varGlobalId":13,"varGlobalName":"Wire_ID","varVariableType":"var","varProtocol":"@wireID@","varFormat":null,"defaultContent":null},{"varGlobalId":14,"varGlobalName":"measure_push_min_value","varVariableType":"var","varProtocol":"@push_min_value@","varFormat":null,"defaultContent":null},{"varGlobalId":15,"varGlobalName":"measure_push_max_value","varVariableType":"var","varProtocol":"@push_max_value@","varFormat":null,"defaultContent":null},{"varGlobalId":16,"varGlobalName":"measure_pull_min_value","varVariableType":"var","varProtocol":"@pull_min_value@","varFormat":null,"defaultContent":null},{"varGlobalId":17,"varGlobalName":"measure_pull_max_value","varVariableType":"var","varProtocol":"@pull_max_value@","varFormat":null,"defaultContent":null},{"varGlobalId":18,"varGlobalName":"date","varVariableType":"sys","varProtocol":"@date@","varFormat":"DD/MM/YYYY","defaultContent":null},{"varGlobalId":19,"varGlobalName":"time","varVariableType":"sys","varProtocol":"@time@","varFormat":"HH:mm:ss","defaultContent":null},{"varGlobalId":20,"varGlobalName":"variant_name","varVariableType":"sys","varProtocol":"@variant@","varFormat":null,"defaultContent":null},{"varGlobalId":21,"varGlobalName":"project_name","varVariableType":"sys","varProtocol":"@project@","varFormat":null,"defaultContent":null},{"varGlobalId":22,"varGlobalName":"user_name","varVariableType":"sys","varProtocol":"@username@","varFormat":null,"defaultContent":null},{"varGlobalId":23,"varGlobalName":"total_test_pass","varVariableType":"sys","varProtocol":"@test_pass@","varFormat":"2","defaultContent":null},{"varGlobalId":24,"varGlobalName":"total_test_fail","varVariableType":"sys","varProtocol":"@test_fail@","varFormat":"2","defaultContent":null}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.400" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.400"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.400" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.400"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.400"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.400"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.385" endtime="20221129 16:32:57.400"/>
 </test>
-<test id="s1-t4" name="CopyLabel" line="68">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20221129 12:23:26.771" endtime="20221129 12:23:26.771">Test execution stopped due to a fatal error.</status>
+<test id="s1-t5" name="fetchdata4" line="50">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.400" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.400"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetSystemGroups</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.417" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetSystemGroups 
+ path_url=/api/ProjectAPI/GetSystemGroups 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.417" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetSystemGroups 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"systemGroupId":57,"name":"System Group-1","description":"desc","serialNumber":"1","isActive":true,"createdDate":"11-25-2022 3:52 AM","modifiedDate":"11-25-2022 3:52 AM","createdBy":1,"modifiedBy":1}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.417" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.417"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.417" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.417"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.417"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.417"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.400" endtime="20221129 16:32:57.417"/>
 </test>
-<test id="s1-t5" name="DeleteLabel" line="85">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20221129 12:23:26.771" endtime="20221129 12:23:26.771">Test execution stopped due to a fatal error.</status>
+<test id="s1-t6" name="fetchdata5" line="60">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.417" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.417"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetModules</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.432" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetModules 
+ path_url=/api/ProjectAPI/GetModules 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.432" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetModules 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.432" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.432"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.432" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.432"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.432"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.432"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.417" endtime="20221129 16:32:57.432"/>
 </test>
-<status status="FAIL" starttime="20221129 12:23:04.162" endtime="20221129 12:23:26.771"/>
+<test id="s1-t7" name="fetchdata6" line="69">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.432" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.432"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectSettingsAPI/GetSystemLogsNReports</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.481" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetSystemLogsNReports 
+ path_url=/api/ProjectSettingsAPI/GetSystemLogsNReports 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.481" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetSystemLogsNReports 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"systemLogsNReportsId":1,"type":null,"fileName":"application_ppt.stats","option":"Free Space","value":1024,"sysVal":"MB"},{"systemLogsNReportsId":2,"type":"Free Space","fileName":"pptsyslog","option":"Free Space","value":1024,"sysVal":"Month"}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.481" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.481"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.496" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.496"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.496"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.496"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.432" endtime="20221129 16:32:57.496"/>
+</test>
+<test id="s1-t8" name="fetchdata7" line="78">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.496" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.496"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectSettingsAPI/GetPPTMasterCardData</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.607" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetPPTMasterCardData 
+ path_url=/api/ProjectSettingsAPI/GetPPTMasterCardData 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.607" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetPPTMasterCardData 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body={"item1":{"masterCardId":1,"firmware":"Ver-1","name":"PPT Master Card","baudrateId":1,"createdBy":1,"createdDate":"09/08/2022 13:05:14","isActive":true,"modifiedBy":1,"modifiedDate":"09/08/2022 13:05:14"},"item2":[{"easyTouchId":1,"masterCardId":0,"name":null,"easyTouchLevel":2,"createdBy":null,"createdDate":null,"isActive":false,"modifiedBy":null,"modifiedDate":null}],"item3":[{"testPointCardId":1,"name":null,"testPoints":128,"quantity":0,"createdBy":0,"createdDate":null,"isActive":false,"modifiedBy":0,"modifiedDate":null}],"item4":[{"commonTypeId":5,"commonType":null,"commonTypeValue":"1200"},{"commonTypeId":6,"commonType":null,"commonTypeValue":"2400"},{"commonTypeId":7,"commonType":null,"commonTypeValue":"4800"},{"commonTypeId":8,"commonType":null,"commonTypeValue":"19200"},{"commonTypeId":9,"commonType":null,"commonTypeValue":"38400"},{"commonTypeId":10,"commonType":null,"commonTypeValue":"57600"},{"commonTypeId":11,"commonType":null,"commonTypeValue":"115200"}]} 
+ </msg>
+<msg timestamp="20221129 16:32:57.607" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.607"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.607" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.607"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.607"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.607"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.496" endtime="20221129 16:32:57.607"/>
+</test>
+<test id="s1-t9" name="fetchdata8" line="89">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.607" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.607"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectSettingsAPI/GetDevices</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.623" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetDevices 
+ path_url=/api/ProjectSettingsAPI/GetDevices 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.623" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetDevices 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"deviceId":2,"deviceName":"Raspberry Pi 3","deviceDivId":"raspberry","order":2,"isActive":true},{"deviceId":3,"deviceName":"Serial Port","deviceDivId":"serialport","order":3,"isActive":true},{"deviceId":4,"deviceName":"Printer","deviceDivId":"printer","order":4,"isActive":true},{"deviceId":6,"deviceName":"PPT Master Card","deviceDivId":"pptmastercard","order":6,"isActive":true},{"deviceId":8,"deviceName":"PPT Test Point Card","deviceDivId":"ppttestpointcard","order":8,"isActive":true},{"deviceId":9,"deviceName":"Loudspeaker","deviceDivId":"loudspeaker","order":9,"isActive":true}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.623" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.623" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.607" endtime="20221129 16:32:57.623"/>
+</test>
+<test id="s1-t10" name="fetchdata9" line="99">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.623" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectSettingsAPI/GetInternalVarTypes</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.623" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetInternalVarTypes 
+ path_url=/api/ProjectSettingsAPI/GetInternalVarTypes 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.623" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetInternalVarTypes 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.623" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.623" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.623"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.623" endtime="20221129 16:32:57.639"/>
+</test>
+<test id="s1-t11" name="fetchdata10" line="109">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.639" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.639"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectSettingsAPI/GetPinDefinitions</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.639" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetPinDefinitions 
+ path_url=/api/ProjectSettingsAPI/GetPinDefinitions 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.639" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectSettingsAPI/GetPinDefinitions 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.639" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.639"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.639" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.639"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.639"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.639"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.639" endtime="20221129 16:32:57.652"/>
+</test>
+<test id="s1-t12" name="fetchdata11" line="118">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.654" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>UserAPI/GetAccessSection</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.654" level="INFO">GET Request : url=http://127.0.0.1:5004/api/UserAPI/GetAccessSection 
+ path_url=/api/UserAPI/GetAccessSection 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.654" level="INFO">GET Response : url=http://127.0.0.1:5004/api/UserAPI/GetAccessSection 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"accessSectionId":8,"sectionType":"Web HMI","sectionName":"Diagnostics"},{"accessSectionId":1,"sectionType":"Web Editor","sectionName":"Info"},{"accessSectionId":2,"sectionType":"Web Editor","sectionName":"Project"},{"accessSectionId":5,"sectionType":"Web HMI","sectionName":"Project"},{"accessSectionId":7,"sectionType":"Web Editor","sectionName":"Report"},{"accessSectionId":4,"sectionType":"Web HMI","sectionName":"Settings"},{"accessSectionId":6,"sectionType":"Web Editor","sectionName":"System"},{"accessSectionId":3,"sectionType":"Web Editor","sectionName":"User Management"}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.654" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.654" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.652" endtime="20221129 16:32:57.654"/>
+</test>
+<test id="s1-t13" name="fetchdata12" line="127">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.654" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.654"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>UserAPI/GetUser</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.670" level="INFO">GET Request : url=http://127.0.0.1:5004/api/UserAPI/GetUser 
+ path_url=/api/UserAPI/GetUser 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.670" level="INFO">GET Response : url=http://127.0.0.1:5004/api/UserAPI/GetUser 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[{"userId":1,"userName":"OCUA4","password":"1234","shift":1,"loggeddInUserId":1,"roleId":0}] 
+ </msg>
+<msg timestamp="20221129 16:32:57.670" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.670"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.670" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.670"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.670"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.670"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.654" endtime="20221129 16:32:57.670"/>
+</test>
+<test id="s1-t14" name="fetchdata13" line="136">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.670" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.670"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetXCodes</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.686" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetXCodes 
+ path_url=/api/ProjectAPI/GetXCodes 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.686" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetXCodes 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.686" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.686"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.686" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.686" endtime="20221129 16:32:57.686"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.686" endtime="20221129 16:32:57.686"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.686" endtime="20221129 16:32:57.686"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.670" endtime="20221129 16:32:57.686"/>
+</test>
+<test id="s1-t15" name="fetchdata14" line="146">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion1</arg>
+<arg>${base-url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20221129 16:32:57.695" level="INFO">Creating Session using : alias=myssion1, url=http://127.0.0.1:5004/api/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion1</arg>
+<arg>ProjectAPI/GetSplice</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221129 16:32:57.695" level="INFO">GET Request : url=http://127.0.0.1:5004/api/ProjectAPI/GetSplice 
+ path_url=/api/ProjectAPI/GetSplice 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221129 16:32:57.695" level="INFO">GET Response : url=http://127.0.0.1:5004/api/ProjectAPI/GetSplice 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 29 Nov 2022 11:02:57 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body=[] 
+ </msg>
+<msg timestamp="20221129 16:32:57.695" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20221129 16:32:57.695" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:57.695" endtime="20221129 16:32:57.695"/>
+</test>
+<status status="PASS" starttime="20221129 16:32:57.226" endtime="20221129 16:32:57.695"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="3" skip="0">All Tests</stat>
+<stat pass="15" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat pass="2" fail="3" skip="0" id="s1" name="test18 LabelPage">test18 LabelPage</stat>
+<stat pass="15" fail="0" skip="0" id="s1" name="Fetchdata">Fetchdata</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20221129 12:23:24.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=107.0.5304.121)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00D9ACD3+2075859]
-	Ordinal0 [0x00D2EE61+1633889]
-	Ordinal0 [0x00C2B7BD+571325]
-	Ordinal0 [0x00C12E1A+470554]
-	Ordinal0 [0x00C7AA0B+895499]
-	Ordinal0 [0x00C8AC96+961686]
-	Ordinal0 [0x00C77136+880950]
-	Ordinal0 [0x00C4FEFD+720637]
-	Ordinal0 [0x00C50F3F+724799]
-	GetHandleVerifier [0x0104EED2+2769538]
-	GetHandleVerifier [0x01040D95+2711877]
-	GetHandleVerifier [0x00E2A03A+521194]
-	GetHandleVerifier [0x00E28DA0+516432]
-	Ordinal0 [0x00D3682C+1665068]
-	Ordinal0 [0x00D3B128+1683752]
-	Ordinal0 [0x00D3B215+1683989]
-	Ordinal0 [0x00D46484+1729668]
-	BaseThreadInitThunk [0x76686939+25]
-	RtlGetFullPathName_UEx [0x773B8FD2+1218]
-	RtlGetFullPathName_UEx [0x773B8F9D+1165]
-</msg>
-<msg timestamp="20221129 12:23:26.767" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
 </errors>
 </robot>
