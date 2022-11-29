@@ -2,9 +2,7 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-${browser}  chrome
-${url}  http://localhost:5003/
-${timer}    4 seconds
+
 ${signinbutton_Xpath}   xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button
 ${UserManagerMenu_Xpath}    xpath://*[@id="four"]
 ${LocalUserHeader_Xpath}  xpath://*[@id="pills-user"]/div/div/div[1]/div[1]/div[1]/h6

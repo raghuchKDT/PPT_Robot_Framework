@@ -11,6 +11,7 @@ ${UserLoginHeader_Xpath}    xpath://*[@id="layoutAuthentication_content"]/main/d
 ${ClickUserDropDown_Xpath}  xpath://*[@id="userDropdown"]
 ${ClickLogout_Xpath}    xpath://*[@id="adminicon"]/ul/li/div/a
 
+
 *** Keywords ***
 Open Browser And Maximize
     Open Browser  ${URL}  ${Browser}

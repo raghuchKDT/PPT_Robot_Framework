@@ -1,597 +1,543 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221125 16:32:13.425" rpa="false" schemaversion="3">
-<suite id="s1" name="test15 ConnectionListPage" source="C:\Users\KnoDTec\PycharmProjects\PPT_Robot_Framework\PPT_Testcases\test15_ConnectionListPage.robot">
-<test id="s1-t1" name="ConnectionListPageHeader" line="22">
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221129 12:23:04.162" rpa="false" schemaversion="3">
+<suite id="s1" name="test18 LabelPage" source="C:\Users\KnoDTec\PycharmProjects\PPT_Robot_Framework\PPT_Testcases\test18_LabelPage.robot">
+<test id="s1-t1" name="ProjectLabelPath" line="20">
 <kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 16:32:13.644" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221125 16:32:13.644" endtime="20221125 16:32:15.278"/>
+<msg timestamp="20221129 12:23:04.601" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
+<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:06.144"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 16:32:15.278" endtime="20221125 16:32:15.397"/>
+<status status="PASS" starttime="20221129 12:23:06.144" endtime="20221129 12:23:06.308"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:UserName</arg>
 <arg>OCUA4</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:15.397" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221125 16:32:15.397" endtime="20221125 16:32:15.598"/>
+<msg timestamp="20221129 12:23:06.313" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
+<status status="PASS" starttime="20221129 12:23:06.309" endtime="20221129 12:23:06.504"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Password</arg>
 <arg>1234</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:15.599" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221125 16:32:15.599" endtime="20221125 16:32:15.698"/>
+<msg timestamp="20221129 12:23:06.505" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
+<status status="PASS" starttime="20221129 12:23:06.504" endtime="20221129 12:23:06.660"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${signinbutton_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:15.698" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221125 16:32:15.698" endtime="20221125 16:32:16.292"/>
+<msg timestamp="20221129 12:23:06.660" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
+<status status="PASS" starttime="20221129 12:23:06.660" endtime="20221129 12:23:06.970"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:32:18.293" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221125 16:32:16.292" endtime="20221125 16:32:18.293"/>
+<msg timestamp="20221129 12:23:08.971" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 12:23:06.970" endtime="20221129 12:23:08.971"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:13.644" endtime="20221125 16:32:18.293"/>
+<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:08.971"/>
 </kw>
-<kw name="ConnectionListPage">
+<kw name="LabelPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ProjectMenu_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:18.293" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:18.293" endtime="20221125 16:32:19.270"/>
+<msg timestamp="20221129 12:23:08.971" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:08.971" endtime="20221129 12:23:09.445"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${VariantExplorerTab_Xpath}</arg>
+<arg>${LabelTab_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:19.271" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20221125 16:32:19.270" endtime="20221125 16:32:19.375"/>
+<msg timestamp="20221129 12:23:09.447" level="INFO">Clicking element 'xpath://*[@id="pills-label-tab"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:09.446" endtime="20221129 12:23:09.763"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:19.375" level="INFO">Clicking element 'xpath://*[@id="pills-connectionlist-tab"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:19.375" endtime="20221125 16:32:19.707"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:18.293" endtime="20221125 16:32:19.708"/>
+<status status="PASS" starttime="20221129 12:23:08.971" endtime="20221129 12:23:09.763"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${timer}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221125 16:32:19.709" endtime="20221125 16:32:19.711"/>
+<status status="PASS" starttime="20221129 12:23:09.763" endtime="20221129 12:23:09.767"/>
 </kw>
 <kw name="Get WebElements" library="SeleniumLibrary">
 <var>${get_text}</var>
-<arg>${ConnectionListHeader_Xpath}</arg>
+<arg>${ProjectLabelPathHeader_Xpath}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20221125 16:32:19.748" level="INFO">${get_text} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="53a95f9ed00b37f8f4c74404643aa11c", element="646f281e-e622-4036-9cb5-8683454d139c")&gt;]</msg>
-<status status="PASS" starttime="20221125 16:32:19.711" endtime="20221125 16:32:19.748"/>
+<msg timestamp="20221129 12:23:09.834" level="INFO">${get_text} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e6571314-758d-4eca-9820-6f7d03f161eb")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20221129 12:23:09.768" endtime="20221129 12:23:09.834"/>
 </kw>
 <for flavor="IN">
 <var>${item}</var>
 <value>@{get_text}</value>
 <iter>
-<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="53a95f9ed00b37f8f4c74404643aa11c", element="646f281e-e622-4036-9cb5-8683454d139c")&gt;</var>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e6571314-758d-4eca-9820-6f7d03f161eb")&gt;</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${item.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:32:19.748" endtime="20221125 16:32:19.771"/>
+<status status="PASS" starttime="20221129 12:23:09.840" endtime="20221129 12:23:09.872"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:19.748" endtime="20221125 16:32:19.771"/>
+<status status="PASS" starttime="20221129 12:23:09.834" endtime="20221129 12:23:09.872"/>
 </iter>
-<status status="PASS" starttime="20221125 16:32:19.748" endtime="20221125 16:32:19.771"/>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="fa49c302-9ee4-4c4e-a0ac-76f140d91dbf")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.872" endtime="20221129 12:23:09.899"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.872" endtime="20221129 12:23:09.899"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="76e5c303-6ede-445f-9de9-bbc6ff804b52")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.899" endtime="20221129 12:23:09.947"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.899" endtime="20221129 12:23:09.947"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="001f0d73-0a9e-4ab9-9efc-1b296a8622f3")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.947" endtime="20221129 12:23:09.963"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.947" endtime="20221129 12:23:09.963"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="abc4a5f9-af02-4e51-b390-9ee50d3c51c8")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.963" endtime="20221129 12:23:09.984"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.963" endtime="20221129 12:23:09.984"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="e77feb53-2946-4576-ba6d-eee56ba4d984")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.984" endtime="20221129 12:23:09.994"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.984" endtime="20221129 12:23:09.994"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="9dbc39cc-a2c5-4550-a3b2-a65f0b48830d")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:09.994" endtime="20221129 12:23:10.010"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:09.994" endtime="20221129 12:23:10.010"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="078fb86e-70d2-4651-880a-4680d677634b")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:10.010" endtime="20221129 12:23:10.018"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:10.010" endtime="20221129 12:23:10.018"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="13baa0f1-c091-40c2-8b0f-99ea4592e4cf")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:10.018" endtime="20221129 12:23:10.034"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:10.018" endtime="20221129 12:23:10.034"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="083cb0c4-1a5f-41be-a670-a2adf961b9ff")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:10.034" endtime="20221129 12:23:10.042"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:10.034" endtime="20221129 12:23:10.042"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="73c757da-6800-464d-8080-b8064804b3f6")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:10.042" endtime="20221129 12:23:10.058"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:10.042" endtime="20221129 12:23:10.058"/>
+</iter>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="5f6cb6091eb1dc972ceec8f4678eed50", element="f68a61b0-56bb-4941-b4c6-209fa042c185")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${item.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221129 12:23:10.058" endtime="20221129 12:23:10.066"/>
+</kw>
+<status status="PASS" starttime="20221129 12:23:10.058" endtime="20221129 12:23:10.066"/>
+</iter>
+<status status="PASS" starttime="20221129 12:23:09.834" endtime="20221129 12:23:10.066"/>
 </for>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:19.772" endtime="20221125 16:32:21.963"/>
-</kw>
 <kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:21.964"/>
+<status status="PASS" starttime="20221129 12:23:10.074" endtime="20221129 12:23:12.255"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Test Completed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:21.964"/>
+<status status="PASS" starttime="20221129 12:23:12.255" endtime="20221129 12:23:12.257"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:21.964"/>
+<status status="PASS" starttime="20221129 12:23:10.066" endtime="20221129 12:23:12.257"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:13.644" endtime="20221125 16:32:21.964"/>
+<status status="PASS" starttime="20221129 12:23:04.601" endtime="20221129 12:23:12.257"/>
 </test>
-<test id="s1-t2" name="CreateNewConnectionList" line="35">
+<test id="s1-t2" name="CreateNewLabel" line="34">
 <kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 16:32:21.964" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:26.158"/>
+<msg timestamp="20221129 12:23:12.257" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
+<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:13.761"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 16:32:26.158" endtime="20221125 16:32:26.297"/>
+<status status="PASS" starttime="20221129 12:23:13.761" endtime="20221129 12:23:13.890"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:UserName</arg>
 <arg>OCUA4</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:26.297" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221125 16:32:26.297" endtime="20221125 16:32:26.443"/>
+<msg timestamp="20221129 12:23:13.890" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
+<status status="PASS" starttime="20221129 12:23:13.890" endtime="20221129 12:23:13.995"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Password</arg>
 <arg>1234</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:26.443" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221125 16:32:26.443" endtime="20221125 16:32:26.569"/>
+<msg timestamp="20221129 12:23:13.995" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
+<status status="PASS" starttime="20221129 12:23:13.995" endtime="20221129 12:23:14.095"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${signinbutton_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:26.569" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221125 16:32:26.569" endtime="20221125 16:32:27.807"/>
+<msg timestamp="20221129 12:23:14.095" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
+<status status="PASS" starttime="20221129 12:23:14.095" endtime="20221129 12:23:14.425"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:32:29.815" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221125 16:32:27.815" endtime="20221125 16:32:29.815"/>
+<msg timestamp="20221129 12:23:16.427" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 12:23:14.426" endtime="20221129 12:23:16.427"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:29.815"/>
+<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:16.427"/>
 </kw>
-<kw name="ConnectionListPage">
+<kw name="LabelPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ProjectMenu_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:29.815" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:29.815" endtime="20221125 16:32:30.355"/>
+<msg timestamp="20221129 12:23:16.428" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:16.428" endtime="20221129 12:23:17.039"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${VariantExplorerTab_Xpath}</arg>
+<arg>${LabelTab_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:30.357" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20221125 16:32:30.356" endtime="20221125 16:32:30.809"/>
+<msg timestamp="20221129 12:23:17.039" level="INFO">Clicking element 'xpath://*[@id="pills-label-tab"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:17.039" endtime="20221129 12:23:17.123"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:30.810" level="INFO">Clicking element 'xpath://*[@id="pills-connectionlist-tab"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:30.809" endtime="20221125 16:32:30.986"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:29.815" endtime="20221125 16:32:30.986"/>
+<status status="PASS" starttime="20221129 12:23:16.427" endtime="20221129 12:23:17.123"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${timer}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221125 16:32:30.989" endtime="20221125 16:32:30.992"/>
+<status status="PASS" starttime="20221129 12:23:17.124" endtime="20221129 12:23:17.125"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${NewConnectionList_Btn_Xpath}</arg>
+<arg>${NewLabel_Btn_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:30.994" level="INFO">Clicking element 'xpath://*[@id="bntCreateConnectionListDetail"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:30.992" endtime="20221125 16:32:31.189"/>
+<msg timestamp="20221129 12:23:17.125" level="INFO">Clicking element 'xpath://*[@id="bntGoToCreateLabel"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:17.125" endtime="20221129 12:23:17.625"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtNewConnectionListName</arg>
-<arg>TestConnectionList1</arg>
+<arg>id:labelName</arg>
+<arg>TestLabel1</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:31.189" level="INFO">Typing text 'TestConnectionList1' into text field 'id:txtNewConnectionListName'.</msg>
-<status status="PASS" starttime="20221125 16:32:31.189" endtime="20221125 16:32:31.515"/>
+<msg timestamp="20221129 12:23:17.631" level="INFO">Typing text 'TestLabel1' into text field 'id:labelName'.</msg>
+<status status="PASS" starttime="20221129 12:23:17.630" endtime="20221129 12:23:17.768"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtNewConnectionListDescription</arg>
-<arg>This is the first connection list under test</arg>
+<arg>id:reportDescription</arg>
+<arg>This is a label under test</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:31.515" level="INFO">Typing text 'This is the first connection list under test' into text field 'id:txtNewConnectionListDescription'.</msg>
-<status status="PASS" starttime="20221125 16:32:31.515" endtime="20221125 16:32:31.694"/>
+<msg timestamp="20221129 12:23:17.769" level="INFO">Typing text 'This is a label under test' into text field 'id:reportDescription'.</msg>
+<status status="PASS" starttime="20221129 12:23:17.769" endtime="20221129 12:23:17.895"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${NewConnectionListSaveBtn_Xpath}</arg>
+<arg>${NewLabelSaveBtn_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:31.698" level="INFO">Clicking element 'xpath://*[@id="btn-add-connectionDet"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:31.696" endtime="20221125 16:32:31.769"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>Connection List Details Added successfully.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221125 16:32:31.953" level="INFO">Current page contains text 'Connection List Details Added successfully.'.</msg>
-<status status="PASS" starttime="20221125 16:32:31.769" endtime="20221125 16:32:31.953"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:31.955" endtime="20221125 16:32:34.222"/>
-</kw>
-<kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:34.226" endtime="20221125 16:32:34.226"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Test Completed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:32:34.226" endtime="20221125 16:32:34.227"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:34.225" endtime="20221125 16:32:34.227"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:21.964" endtime="20221125 16:32:34.229"/>
-</test>
-<test id="s1-t3" name="EditConnectionList" line="51">
-<kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 16:32:34.238" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221125 16:32:34.236" endtime="20221125 16:32:36.463"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 16:32:36.464" endtime="20221125 16:32:36.589"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:UserName</arg>
-<arg>OCUA4</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:36.591" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221125 16:32:36.590" endtime="20221125 16:32:36.770"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:36.771" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221125 16:32:36.770" endtime="20221125 16:32:36.898"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${signinbutton_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:36.900" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221125 16:32:36.898" endtime="20221125 16:32:37.412"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:32:39.413" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221125 16:32:37.413" endtime="20221125 16:32:39.414"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:34.235" endtime="20221125 16:32:39.414"/>
-</kw>
-<kw name="ConnectionListPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ProjectMenu_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:39.417" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:39.417" endtime="20221125 16:32:40.895"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${VariantExplorerTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:40.895" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20221125 16:32:40.895" endtime="20221125 16:32:41.154"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:41.154" level="INFO">Clicking element 'xpath://*[@id="pills-connectionlist-tab"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:41.154" endtime="20221125 16:32:41.411"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:39.415" endtime="20221125 16:32:41.412"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>${timer}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221125 16:32:41.413" endtime="20221125 16:32:41.414"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SelectConnectionListcheckbox_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:41.420" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span'.</msg>
-<msg timestamp="20221125 16:32:45.682" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-67.png"&gt;&lt;img src="selenium-screenshot-67.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221125 16:32:45.682" level="FAIL">Element with locator 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span' not found.</msg>
-<status status="FAIL" starttime="20221125 16:32:41.416" endtime="20221125 16:32:45.686"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListEdit_Btn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtNewConnectionListName</arg>
-<arg>ConnectionList1</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtNewConnectionListDescription</arg>
-<arg>This is edited Connection List under test</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListEdit_UpdateBtn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
+<msg timestamp="20221129 12:23:17.898" level="INFO">Clicking element 'xpath://*[@id="btn-labelSave"]'.</msg>
+<status status="PASS" starttime="20221129 12:23:17.895" endtime="20221129 12:23:17.997"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Connection List Details Updated successfully.</arg>
+<arg>Updated Successfully.</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20221125 16:32:45.686" endtime="20221125 16:32:45.686"/>
+<status status="PASS" starttime="20221129 12:23:17.997" endtime="20221129 12:23:18.326"/>
 </kw>
 <kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:45.694" endtime="20221125 16:32:47.896"/>
+<status status="PASS" starttime="20221129 12:23:18.326" endtime="20221129 12:23:20.627"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Test Completed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:32:47.896" endtime="20221125 16:32:47.898"/>
+<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:20.627"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:45.686" endtime="20221125 16:32:47.898"/>
+<status status="PASS" starttime="20221129 12:23:18.326" endtime="20221129 12:23:20.627"/>
 </kw>
-<status status="FAIL" starttime="20221125 16:32:34.233" endtime="20221125 16:32:47.898">Element with locator 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span' not found.</status>
+<status status="PASS" starttime="20221129 12:23:12.257" endtime="20221129 12:23:20.627"/>
 </test>
-<test id="s1-t4" name="CopyConnectionList" line="69">
+<test id="s1-t3" name="EditLabel" line="50">
 <kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 16:32:47.905" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221125 16:32:47.903" endtime="20221125 16:32:50.647"/>
+<msg timestamp="20221129 12:23:20.627" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
+<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:21.976"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 16:32:50.647" endtime="20221125 16:32:50.797"/>
+<status status="PASS" starttime="20221129 12:23:21.976" endtime="20221129 12:23:22.092"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:UserName</arg>
 <arg>OCUA4</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:50.798" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221125 16:32:50.797" endtime="20221125 16:32:50.946"/>
+<msg timestamp="20221129 12:23:22.092" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
+<status status="PASS" starttime="20221129 12:23:22.092" endtime="20221129 12:23:22.242"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:Password</arg>
 <arg>1234</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:50.950" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221125 16:32:50.946" endtime="20221125 16:32:51.046"/>
+<msg timestamp="20221129 12:23:22.242" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
+<status status="PASS" starttime="20221129 12:23:22.242" endtime="20221129 12:23:22.351"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${signinbutton_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:51.046" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221125 16:32:51.046" endtime="20221125 16:32:51.369"/>
+<msg timestamp="20221129 12:23:22.351" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
+<status status="PASS" starttime="20221129 12:23:22.351" endtime="20221129 12:23:22.679"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:32:53.369" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221125 16:32:51.369" endtime="20221125 16:32:53.369"/>
+<msg timestamp="20221129 12:23:24.680" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20221129 12:23:22.679" endtime="20221129 12:23:24.680"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:47.903" endtime="20221125 16:32:53.370"/>
+<status status="PASS" starttime="20221129 12:23:20.627" endtime="20221129 12:23:24.680"/>
 </kw>
-<kw name="ConnectionListPage">
+<kw name="LabelPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ProjectMenu_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:53.370" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:53.370" endtime="20221125 16:32:53.905"/>
+<msg timestamp="20221129 12:23:24.680" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
+<msg timestamp="20221129 12:23:24.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=107.0.5304.121)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D9ACD3+2075859]
+	Ordinal0 [0x00D2EE61+1633889]
+	Ordinal0 [0x00C2B7BD+571325]
+	Ordinal0 [0x00C12E1A+470554]
+	Ordinal0 [0x00C7AA0B+895499]
+	Ordinal0 [0x00C8AC96+961686]
+	Ordinal0 [0x00C77136+880950]
+	Ordinal0 [0x00C4FEFD+720637]
+	Ordinal0 [0x00C50F3F+724799]
+	GetHandleVerifier [0x0104EED2+2769538]
+	GetHandleVerifier [0x01040D95+2711877]
+	GetHandleVerifier [0x00E2A03A+521194]
+	GetHandleVerifier [0x00E28DA0+516432]
+	Ordinal0 [0x00D3682C+1665068]
+	Ordinal0 [0x00D3B128+1683752]
+	Ordinal0 [0x00D3B215+1683989]
+	Ordinal0 [0x00D46484+1729668]
+	BaseThreadInitThunk [0x76686939+25]
+	RtlGetFullPathName_UEx [0x773B8FD2+1218]
+	RtlGetFullPathName_UEx [0x773B8F9D+1165]
+</msg>
+<msg timestamp="20221129 12:23:24.680" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=107.0.5304.121)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D9ACD3+2075859]
+	Ordinal0 [0x00D2EE61+1633889]
+	Ordinal0 [0x00C2B7BD+571325]
+	Ordinal0 [0x00C12E1A+470554]
+	Ordinal0 [0x00C7AA0B+895499]
+	Ordinal0 [0x00C8AC96+961686]
+	Ordinal0 [0x00C77136+880950]
+	Ordinal0 [0x00C4FEFD+720637]
+	Ordinal0 [0x00C50F3F+724799]
+	GetHandleVerifier [0x0104EED2+2769538]
+	GetHandleVerifier [0x01040D95+2711877]
+	GetHandleVerifier [0x00E2A03A+521194]
+	GetHandleVerifier [0x00E28DA0+516432]
+	Ordinal0 [0x00D3682C+1665068]
+	Ordinal0 [0x00D3B128+1683752]
+	Ordinal0 [0x00D3B215+1683989]
+	Ordinal0 [0x00D46484+1729668]
+	BaseThreadInitThunk [0x76686939+25]
+	RtlGetFullPathName_UEx [0x773B8FD2+1218]
+	RtlGetFullPathName_UEx [0x773B8F9D+1165]
+</msg>
+<status status="FAIL" starttime="20221129 12:23:24.680" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${VariantExplorerTab_Xpath}</arg>
+<arg>${LabelTab_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:53.906" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20221125 16:32:53.905" endtime="20221125 16:32:54.399"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:54.399" level="INFO">Clicking element 'xpath://*[@id="pills-connectionlist-tab"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:54.399" endtime="20221125 16:32:54.614"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:53.370" endtime="20221125 16:32:54.615"/>
+<status status="FAIL" starttime="20221129 12:23:24.680" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>${timer}</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221125 16:32:54.616" endtime="20221125 16:32:54.621"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:32:55.625" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20221125 16:32:54.624" endtime="20221125 16:32:55.625"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${SelectConnectionListcheckbox_Xpath}</arg>
+<arg>${SelectLabelcheckbox_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:55.626" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span'.</msg>
-<status status="PASS" starttime="20221125 16:32:55.626" endtime="20221125 16:32:55.696"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListCopy_Btn_Xpath}</arg>
+<arg>${LabelEdit_Btn_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:55.704" level="INFO">Clicking element 'xpath://*[@id="btn-conndetails-copy"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:55.704" endtime="20221125 16:32:55.789"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtCopyNewConnectionName</arg>
-<arg>ConnectionList2</arg>
+<arg>id:labelName</arg>
+<arg>Label1</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:55.790" level="INFO">Typing text 'ConnectionList2' into text field 'id:txtCopyNewConnectionName'.</msg>
-<status status="PASS" starttime="20221125 16:32:55.790" endtime="20221125 16:32:56.081"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id:txtCopyNewConnectionListDescription</arg>
-<arg>This is a duplicate copy of Connection List</arg>
+<arg>id:reportDescription</arg>
+<arg>This is edited label under test</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:56.085" level="INFO">Typing text 'This is a duplicate copy of Connection List' into text field 'id:txtCopyNewConnectionListDescription'.</msg>
-<status status="PASS" starttime="20221125 16:32:56.084" endtime="20221125 16:32:56.268"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListCopy_SaveAsBtn_Xpath}</arg>
+<arg>${LabelEdit_SaveBtn_Xpath}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:32:56.268" level="INFO">Clicking element 'xpath://*[@id="btn-copy-connection"]'.</msg>
-<status status="PASS" starttime="20221125 16:32:56.268" endtime="20221125 16:32:56.334"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Connection List Details Added successfully.</arg>
+<arg>Updated Successfully.</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20221125 16:32:56.335" endtime="20221125 16:32:56.436"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:56.436" endtime="20221125 16:32:58.610"/>
+<status status="NOT RUN" starttime="20221129 12:23:24.702" endtime="20221129 12:23:24.702"/>
 </kw>
 <kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:32:58.610" endtime="20221125 16:32:58.610"/>
+<msg timestamp="20221129 12:23:26.767" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
+<msg timestamp="20221129 12:23:26.767" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="FAIL" starttime="20221129 12:23:24.708" endtime="20221129 12:23:26.767"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Test Completed</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:32:58.610" endtime="20221125 16:32:58.610"/>
+<status status="NOT RUN" starttime="20221129 12:23:26.767" endtime="20221129 12:23:26.767"/>
 </kw>
-<status status="PASS" starttime="20221125 16:32:58.610" endtime="20221125 16:32:58.610"/>
+<status status="FAIL" starttime="20221129 12:23:24.708" endtime="20221129 12:23:26.767">Execution terminated by signal</status>
 </kw>
-<status status="PASS" starttime="20221125 16:32:47.901" endtime="20221125 16:32:58.610"/>
+<status status="FAIL" starttime="20221129 12:23:20.627" endtime="20221129 12:23:26.767">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=107.0.5304.121)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D9ACD3+2075859]
+	Ordinal0 [0x00D2EE61+1633889]
+	Ordinal0 [0x00C2B7BD+571325]
+	Ordinal0 [0x00C12E1A+470554]
+	Ordinal0 [0x00C7AA0B+895499]
+	Ordinal0 [0x00C8AC96+961686]
+	Ordinal0 [0x00C77136+880950]
+	Ordinal0 [0x00C4FEFD+720637]
+	Ordinal0 [0x00C50F3F+724799]
+	GetHandleVerifier [0x0104EED2+2769538]
+	GetHandleVerifier [0x01040D95+2711877]
+	GetHandleVerifier [0x00E2A03A+521194]
+	GetHandleVerifier [0x00E28DA0+516432]
+	Ordinal0 [0x00D3682C+1665068]
+	Ordinal0 [0x00D3B128+1683752]
+	Ordinal0 [0x00D3B215+1683989]
+	Ordinal0 [0x00D46484+1729668]
+	BaseThreadInitThunk [0x76686939+25]
+	RtlGetFullPathName_UEx [0x773B8FD2+1218]
+	RtlGetFullPathName_UEx [0x773B8F9D+1165]
+
+
+Also teardown failed:
+Execution terminated by signal</status>
 </test>
-<test id="s1-t5" name="DeleteConnectionList" line="89">
-<kw name="Open Browser And Maximize" library="Resource_setupnteardown" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221125 16:32:58.618" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5003/'.</msg>
-<status status="PASS" starttime="20221125 16:32:58.610" endtime="20221125 16:33:02.061"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221125 16:33:02.061" endtime="20221125 16:33:02.180"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:UserName</arg>
-<arg>OCUA4</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:02.180" level="INFO">Typing text 'OCUA4' into text field 'id:UserName'.</msg>
-<status status="PASS" starttime="20221125 16:33:02.180" endtime="20221125 16:33:02.297"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:Password</arg>
-<arg>1234</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:02.298" level="INFO">Typing text '1234' into text field 'id:Password'.</msg>
-<status status="PASS" starttime="20221125 16:33:02.297" endtime="20221125 16:33:02.428"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${signinbutton_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:02.428" level="INFO">Clicking element 'xpath://*[@id="layoutAuthentication_content"]/main/div/div[1]/div/div/form/div[4]/button'.</msg>
-<status status="PASS" starttime="20221125 16:33:02.428" endtime="20221125 16:33:02.999"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221125 16:33:05.006" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221125 16:33:02.999" endtime="20221125 16:33:05.006"/>
-</kw>
-<status status="PASS" starttime="20221125 16:32:58.610" endtime="20221125 16:33:05.006"/>
-</kw>
-<kw name="ConnectionListPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ProjectMenu_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:05.006" level="INFO">Clicking element 'xpath://*[@id="three"]'.</msg>
-<status status="PASS" starttime="20221125 16:33:05.006" endtime="20221125 16:33:06.170"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${VariantExplorerTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:06.171" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[2]/div/ul/li[5]/a'.</msg>
-<status status="PASS" starttime="20221125 16:33:06.170" endtime="20221125 16:33:06.540"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListTab_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:06.541" level="INFO">Clicking element 'xpath://*[@id="pills-connectionlist-tab"]'.</msg>
-<status status="PASS" starttime="20221125 16:33:06.540" endtime="20221125 16:33:07.114"/>
-</kw>
-<status status="PASS" starttime="20221125 16:33:05.006" endtime="20221125 16:33:07.114"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>${timer}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221125 16:33:07.114" endtime="20221125 16:33:07.118"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${SelectConnectionListcheckbox_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221125 16:33:07.120" level="INFO">Clicking element 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span'.</msg>
-<msg timestamp="20221125 16:33:11.773" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-68.png"&gt;&lt;img src="selenium-screenshot-68.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20221125 16:33:11.773" level="FAIL">Element with locator 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span' not found.</msg>
-<status status="FAIL" starttime="20221125 16:33:07.118" endtime="20221125 16:33:11.774"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListDelete_Btn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:33:11.775" endtime="20221125 16:33:11.775"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${ConnectionListConfirmDelete_Btn_Xpath}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20221125 16:33:11.776" endtime="20221125 16:33:11.776"/>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Deleted Successfully.</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" starttime="20221125 16:33:11.777" endtime="20221125 16:33:11.780"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20221125 16:33:11.780" endtime="20221125 16:33:11.780"/>
-</kw>
-<kw name="Close Browser Window" library="Resource_setupnteardown" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221125 16:33:11.782" endtime="20221125 16:33:13.961"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Test Completed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221125 16:33:13.961" endtime="20221125 16:33:13.961"/>
-</kw>
-<status status="PASS" starttime="20221125 16:33:11.782" endtime="20221125 16:33:13.961"/>
-</kw>
-<status status="FAIL" starttime="20221125 16:32:58.610" endtime="20221125 16:33:13.961">Element with locator 'xpath:/html/body/div[1]/div[2]/main/div[3]/div/div[2]/div[2]/div[5]/div[1]/div[2]/div/div[2]/div[2]/div/div[1]/div/label/span' not found.</status>
+<test id="s1-t4" name="CopyLabel" line="68">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20221129 12:23:26.771" endtime="20221129 12:23:26.771">Test execution stopped due to a fatal error.</status>
 </test>
-<status status="FAIL" starttime="20221125 16:32:13.428" endtime="20221125 16:33:13.961"/>
+<test id="s1-t5" name="DeleteLabel" line="85">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20221129 12:23:26.771" endtime="20221129 12:23:26.771">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20221129 12:23:04.162" endtime="20221129 12:23:26.771"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="2" skip="0">All Tests</stat>
+<stat pass="2" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="2" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat pass="3" fail="2" skip="0" id="s1" name="test15 ConnectionListPage">test15 ConnectionListPage</stat>
+<stat pass="2" fail="3" skip="0" id="s1" name="test18 LabelPage">test18 LabelPage</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20221129 12:23:24.680" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=107.0.5304.121)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D9ACD3+2075859]
+	Ordinal0 [0x00D2EE61+1633889]
+	Ordinal0 [0x00C2B7BD+571325]
+	Ordinal0 [0x00C12E1A+470554]
+	Ordinal0 [0x00C7AA0B+895499]
+	Ordinal0 [0x00C8AC96+961686]
+	Ordinal0 [0x00C77136+880950]
+	Ordinal0 [0x00C4FEFD+720637]
+	Ordinal0 [0x00C50F3F+724799]
+	GetHandleVerifier [0x0104EED2+2769538]
+	GetHandleVerifier [0x01040D95+2711877]
+	GetHandleVerifier [0x00E2A03A+521194]
+	GetHandleVerifier [0x00E28DA0+516432]
+	Ordinal0 [0x00D3682C+1665068]
+	Ordinal0 [0x00D3B128+1683752]
+	Ordinal0 [0x00D3B215+1683989]
+	Ordinal0 [0x00D46484+1729668]
+	BaseThreadInitThunk [0x76686939+25]
+	RtlGetFullPathName_UEx [0x773B8FD2+1218]
+	RtlGetFullPathName_UEx [0x773B8F9D+1165]
+</msg>
+<msg timestamp="20221129 12:23:26.767" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
 </errors>
 </robot>

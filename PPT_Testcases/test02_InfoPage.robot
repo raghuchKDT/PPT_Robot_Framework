@@ -4,7 +4,8 @@ Resource    ../Resource/Resource_Info.robot
 Test Setup       Open Browser And Maximize
 Test Teardown    Close Browser Window
 
-
+*** Keywords ***
+Set Screenshot Directory c:ppt_reports
 
 *** Test Cases ***
 
