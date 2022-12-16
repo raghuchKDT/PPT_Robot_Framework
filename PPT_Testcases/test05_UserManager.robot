@@ -1,8 +1,13 @@
 *** Settings ***
+Library       SeleniumLibrary
+Library        DataDriver   ../Data Driven Reports/user_infoRobot.xlsx
 Resource    ../Resource_setupnteardown.robot
 Resource    ../Resource/Resource_usermanager.robot
+
+
 Test Setup       Open Browser And Maximize
 Test Teardown    Close Browser Window
+Test Template    Login
 
 *** Keywords ***
 
@@ -10,9 +15,15 @@ Test Teardown    Close Browser Window
 UserManagerPage
     click element   ${UserManagerMenu_Xpath}
 
+Login
+     [Arguments]        ${Username}      ${Password}
+     username    ${Username}
+     Pwd         ${Password}
+
+
 *** Test Cases ***
 
-# This is a testcase to verify the Local User Header
+ This is a testcase to verify the Local User Header
 LocalUsersHeader
 
     UserManagerPage
@@ -99,3 +110,36 @@ DeleteUser
     click element   ${ConfirmDelete_Btn_Xpath}
 
     page should contain  Deleted Successfully.
+
+
+CreateMultipleUser
+
+    UserManagerPage
+    set selenium implicit wait  ${timer}
+
+    Login
+    set selenium implicit wait  ${timer}
+
+    click element  ${CreateNewUser_Btn_Xpath}
+
+    click element  ${NewUserSave_Btn_Xpath}
+
+    page should contain  Updated Successfully.
+
+
+
+CreateUser  using   ${Username}  ${Password}
+
+   UserManager Page
+   set selenium implicit wait  ${timer}
+
+   click element  ${CreateNewUser_Btn_Xpath}
+
+   Login
+   set selenium implicit wait  ${timer}
+
+   click element  ${NewUserSave_Btn_Xpath}
+
+   page should contain  Updated Successfully.
+
+

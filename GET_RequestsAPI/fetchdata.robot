@@ -16,6 +16,7 @@ fetchdata
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 fetchdata1
       create session   myssion1    ${base-url}
@@ -25,6 +26,8 @@ fetchdata1
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
+
 
 fetchdata2
       create session   myssion1    ${base-url}
@@ -34,7 +37,7 @@ fetchdata2
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
-
+      Log To Console    ${response.content}
 
 
 fetchdata3
@@ -45,7 +48,7 @@ fetchdata3
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
-
+      Log To Console    ${response.content}
 
 fetchdata4
       create session   myssion1    ${base-url}
@@ -55,7 +58,7 @@ fetchdata4
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
-
+      Log To Console    ${response.content}
 
 fetchdata5
       create session   myssion1    ${base-url}
@@ -65,6 +68,8 @@ fetchdata5
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
+
 
 fetchdata6
       create session   myssion1    ${base-url}
@@ -74,6 +79,8 @@ fetchdata6
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
+
 
 fetchdata7
       create session   myssion1    ${base-url}
@@ -83,6 +90,7 @@ fetchdata7
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 
 fetchdata8
@@ -93,6 +101,7 @@ fetchdata8
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 
 fetchdata9
@@ -103,6 +112,7 @@ fetchdata9
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 
 fetchdata10
@@ -113,6 +123,7 @@ fetchdata10
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 fetchdata11
       create session   myssion1    ${base-url}
@@ -122,6 +133,7 @@ fetchdata11
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 fetchdata12
       create session   myssion1    ${base-url}
@@ -131,6 +143,7 @@ fetchdata12
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 fetchdata13
       create session   myssion1    ${base-url}
@@ -140,6 +153,7 @@ fetchdata13
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}
 
 
 fetchdata14
@@ -150,3 +164,4 @@ fetchdata14
 
       should be equal      ${status}    200
       log to console      ${response.status_code}
+      Log To Console    ${response.content}

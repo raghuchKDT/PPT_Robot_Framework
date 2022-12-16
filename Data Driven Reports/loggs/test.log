@@ -1,0 +1,227 @@
+12/09/2022 03:08:44 PM: INFO: Report created successfully.
+12/09/2022 03:09:02 PM: INFO: Report edited successfully.
+12/09/2022 03:09:37 PM: INFO: Report deleted successfully.
+12/09/2022 03:10:36 PM: INFO: Project edited successfully.
+12/09/2022 03:13:00 PM: INFO: pick to light added successfully.
+12/09/2022 03:14:25 PM: INFO: Switch created successfully.
+12/09/2022 03:14:40 PM: INFO: Switch edited successfully.
+12/09/2022 03:14:53 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTswitchpage.py", line 100, in verify_deletedswitch
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/09/2022 03:14:53 PM: ERROR: Switch was not verified
+12/09/2022 03:15:30 PM: INFO: XCode created successfully.
+12/09/2022 03:15:59 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTvariantpage.py", line 60, in verify_variant
+    assert 'Updated Successfully.' in context.driver.page_source
+AssertionError
+12/09/2022 03:15:59 PM: ERROR: Variant was not verified
+12/09/2022 03:17:25 PM: INFO: New color scheme  created successfully.
+12/09/2022 03:17:50 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTWirepage.py", line 344, in verify_colorscheme
+    assert 'Wire Color Scheme Updated successfully.' in context.driver.page_source
+AssertionError
+12/09/2022 03:17:50 PM: ERROR: Wire color scheme not verified
+12/09/2022 03:18:07 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTWirepage.py", line 369, in verify_deletedscheme
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/09/2022 03:18:07 PM: ERROR: Wire color scheme not verified
+12/09/2022 03:18:36 PM: INFO: New Splice created successfully.
+12/09/2022 03:18:53 PM: INFO: Splice edited successfully.
+12/09/2022 03:19:26 PM: INFO: Splice deleted successfully.
+12/09/2022 03:20:05 PM: INFO: connection list created successfully.
+12/09/2022 03:20:20 PM: INFO: Variable Page Verified
+12/09/2022 03:21:05 PM: INFO: Workflow created successfully.
+12/09/2022 03:22:13 PM: INFO: Label edited successfully.
+12/09/2022 04:32:02 PM: ERROR: Error terminating service process.
+Traceback (most recent call last):
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\service.py", line 166, in _terminate_process
+    self.process.terminate()
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1624, in terminate
+    _winapi.TerminateProcess(self._handle, 1)
+OSError: [WinError 6] The handle is invalid
+12/09/2022 04:45:08 PM: INFO: Module added successfully.
+12/09/2022 04:50:01 PM: INFO: Module added successfully.
+12/09/2022 04:50:33 PM: INFO: Module deleted successfully.
+12/12/2022 12:32:00 PM: INFO: User Manager page verified successfully.
+12/12/2022 12:32:25 PM: INFO: User edited successfully.
+12/12/2022 12:34:09 PM: INFO: User Manager page verified successfully.
+12/12/2022 12:34:32 PM: INFO: User edited successfully.
+12/12/2022 12:36:25 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTreportpage.py", line 60, in verify_newreport
+    assert 'Updated Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:36:25 PM: ERROR: report was not verified
+12/12/2022 12:36:37 PM: INFO: Report edited successfully.
+12/12/2022 12:37:08 PM: INFO: Report deleted successfully.
+12/12/2022 12:38:04 PM: INFO: Project edited successfully.
+12/12/2022 12:39:39 PM: INFO: pick to light added successfully.
+12/12/2022 12:40:12 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTPick2light.py", line 188, in verify_deleted
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:40:12 PM: ERROR: Pick to Light was not verified
+12/12/2022 12:40:52 PM: INFO: Switch created successfully.
+12/12/2022 12:41:07 PM: INFO: Switch edited successfully.
+12/12/2022 12:41:19 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTswitchpage.py", line 100, in verify_deletedswitch
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:41:19 PM: ERROR: Switch was not verified
+12/12/2022 12:41:53 PM: INFO: XCode created successfully.
+12/12/2022 12:42:18 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTvariantpage.py", line 60, in verify_variant
+    assert 'Updated Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:42:18 PM: ERROR: Variant was not verified
+12/12/2022 12:43:37 PM: INFO: New color scheme  created successfully.
+12/12/2022 12:43:55 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTWirepage.py", line 344, in verify_colorscheme
+    assert 'Wire Color Scheme Updated successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:43:55 PM: ERROR: Wire color scheme not verified
+12/12/2022 12:44:10 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTWirepage.py", line 369, in verify_deletedscheme
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:44:10 PM: ERROR: Wire color scheme not verified
+12/12/2022 12:44:35 PM: INFO: New Splice created successfully.
+12/12/2022 12:45:21 PM: INFO: Splice deleted successfully.
+12/12/2022 12:45:59 PM: INFO: connection list created successfully.
+12/12/2022 12:46:13 PM: INFO: Variable Page Verified
+12/12/2022 12:46:54 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTworkflowpage.py", line 59, in verify_newworkflow
+    assert 'Data Added Successfully.' in context.driver.page_source
+AssertionError
+12/12/2022 12:46:54 PM: ERROR: Workflow not verified
+12/12/2022 12:47:10 PM: INFO: Workflow edited successfully.
+12/12/2022 12:47:25 PM: INFO: Workflow deleted successfully.
+12/12/2022 12:48:05 PM: INFO: Label edited successfully.
+12/12/2022 12:48:20 PM: INFO: label edited successfully.
+12/12/2022 12:48:34 PM: INFO: Label deleted successfully.
+12/12/2022 12:49:06 PM: INFO: Role created successfully.
+12/12/2022 12:49:19 PM: INFO: Role was edited successfully.
+12/12/2022 12:49:34 PM: INFO: Role deleted successfully.
+12/14/2022 03:31:30 PM: INFO: pick to light added successfully.
+12/14/2022 03:31:48 PM: INFO: pick to light updated successfully.
+12/14/2022 03:32:03 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTPick2light.py", line 166, in verified_copied
+    assert ' Added Successfully.' in context.driver.page_source
+AssertionError
+12/14/2022 03:32:03 PM: ERROR: Pick to Light was not verified
+12/14/2022 03:32:16 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTPick2light.py", line 188, in verify_deleted
+    assert 'Deleted Successfully.' in context.driver.page_source
+AssertionError
+12/14/2022 03:32:16 PM: ERROR: Pick to Light was not verified
+12/14/2022 03:46:09 PM: INFO: Workflow created successfully.
+12/14/2022 03:46:28 PM: INFO: Workflow edited successfully.
+12/14/2022 03:47:03 PM: INFO: Workflow deleted successfully.
+12/14/2022 05:08:02 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:08:25 PM: INFO: User edited successfully.
+12/14/2022 05:09:38 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:10:02 PM: INFO: User edited successfully.
+12/14/2022 05:13:12 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:13:34 PM: INFO: User edited successfully.
+12/14/2022 05:15:14 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:15:37 PM: INFO: User edited successfully.
+12/14/2022 05:16:15 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:16:38 PM: INFO: User edited successfully.
+12/14/2022 05:16:51 PM: INFO: User deleted verified successfully.
+12/14/2022 05:17:55 PM: INFO: Info Page is verified successfully.
+12/14/2022 05:18:05 PM: INFO: Info Page is verified successfully.
+12/14/2022 05:18:07 PM: INFO: Version history verified successfully.
+12/14/2022 05:18:16 PM: INFO: Info Page is verified successfully.
+12/14/2022 05:18:18 PM: INFO: Option page verified successfully.
+12/14/2022 05:20:21 PM: INFO: Role created successfully.
+12/14/2022 05:20:33 PM: INFO: Role was edited successfully.
+12/14/2022 05:20:44 PM: INFO: Role deleted successfully.
+12/14/2022 05:21:13 PM: INFO: Report created successfully.
+12/14/2022 05:21:25 PM: INFO: Report edited successfully.
+12/14/2022 05:21:59 PM: INFO: Report deleted successfully.
+12/14/2022 05:24:52 PM: INFO: pick to light added successfully.
+12/14/2022 05:30:31 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:30:31 PM: ERROR: project was not verified
+12/14/2022 05:31:05 PM: ERROR: Error terminating service process.
+Traceback (most recent call last):
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\service.py", line 166, in _terminate_process
+    self.process.terminate()
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1624, in terminate
+    _winapi.TerminateProcess(self._handle, 1)
+OSError: [WinError 6] The handle is invalid
+12/14/2022 05:32:40 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:32:40 PM: ERROR: project was not verified
+12/14/2022 05:33:08 PM: ERROR: Error terminating service process.
+Traceback (most recent call last):
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\service.py", line 166, in _terminate_process
+    self.process.terminate()
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1624, in terminate
+    _winapi.TerminateProcess(self._handle, 1)
+OSError: [WinError 6] The handle is invalid
+12/14/2022 05:34:03 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:34:03 PM: ERROR: project was not verified
+12/14/2022 05:34:24 PM: ERROR: Error terminating service process.
+Traceback (most recent call last):
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\service.py", line 166, in _terminate_process
+    self.process.terminate()
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1624, in terminate
+    _winapi.TerminateProcess(self._handle, 1)
+OSError: [WinError 6] The handle is invalid
+12/14/2022 05:35:05 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:35:05 PM: ERROR: project was not verified
+12/14/2022 05:36:01 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:36:01 PM: ERROR: project was not verified
+12/14/2022 05:37:25 PM: INFO: Project created successfully.
+12/14/2022 05:37:58 PM: ERROR: Error terminating service process.
+Traceback (most recent call last):
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\common\service.py", line 166, in _terminate_process
+    self.process.terminate()
+  File "C:\Users\KnoDTec\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1624, in terminate
+    _winapi.TerminateProcess(self._handle, 1)
+OSError: [WinError 6] The handle is invalid
+12/14/2022 05:44:40 PM: CRITICAL: 
+Traceback (most recent call last):
+  File "features\steps\PPTprojectpage.py", line 100, in verify_Project
+    assert 'Updated Successfully!' in context.driver.page_source
+AssertionError
+12/14/2022 05:44:40 PM: ERROR: project was not verified
+12/14/2022 05:45:19 PM: INFO: Project edited successfully.
+12/14/2022 05:48:02 PM: INFO: Project created successfully.
+12/14/2022 05:48:34 PM: INFO: Project edited successfully.
+12/14/2022 05:49:10 PM: INFO: Project deleted successfully.
+12/14/2022 05:50:14 PM: INFO: User Manager page verified successfully.
+12/14/2022 05:50:37 PM: INFO: User edited successfully.

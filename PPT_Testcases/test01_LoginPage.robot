@@ -93,6 +93,5 @@ LogOutTest
     Open Browser And Maximize
     set selenium implicit wait  ${timer}
     click element   ${ClickUserDropDown_Xpath}
-    Sleep            2s
     click element   ${ClickLogout_Xpath}
 

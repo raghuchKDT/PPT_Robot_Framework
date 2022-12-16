@@ -16,7 +16,25 @@ ${EditAccessLevel_Xpath}    xpath://*[@id="editroleId"]/option[2]
 ${EditUserSave_Btn_Xpath}    xpath://*[@id="btn-userSave"]
 ${ClickDelete_Btn_Xpath}    xpath://*[@id="btn-userdelete"]
 ${ConfirmDelete_Btn_Xpath}    xpath://*[@id="btn-delete-user"]
-${Username}    xpath://*[@id="userName"]
-${Password}    xpath://*[@id="password"]
+${ClickUserDropDown_Xpath}  xpath://*[@id="userDropdown"]
+${ClickLogout_Xpath}    xpath://*[@id="adminicon"]/ul/li/div/a
 
+*** Keywords ***
+
+UserManagerPage
+        click element    ${UserManagerMenu_Xpath}
+
+New btn to create user
+        click element    ${CreateNewUser_Btn_Xpath}
+
+input username
+         [Arguments]    ${Username}
+          Input Text   id:userName      ${Username}
+input Pwd
+         [Arguments]    ${Password}
+         Input Text    id:password      ${Password}
+
+Save btn
+       set selenium implicit wait  ${timer}
+       click element  ${NewUserSave_Btn_Xpath}
 

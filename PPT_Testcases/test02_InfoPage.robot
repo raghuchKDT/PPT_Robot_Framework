@@ -36,8 +36,6 @@ RecentProjHeader
 # This is a test to verify the Version History details
 VersionHistory
 
-
-
     sleep   2s
 
     click element  ${VersionHistoryTab_Xpath}
@@ -51,7 +49,6 @@ VersionHistory
 
 # This is a test to verify the Option details
 OptionTab
-
 
     set selenium implicit wait  ${timer}
 
